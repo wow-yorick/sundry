@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<script src="Clock.js"></script>
+
+<meta charset="utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content="wowyorick" />
+</head>
+<body>
+<canvas width="500" height="500" id="this-canvas"></canvas>
+<script>
+var cans = document.getElementById('this-canvas');
+//console.log(cans);
+var clock = new Clock(cans);
+//clock.drawClock();
+setInterval('clock.drawClock()',1000);
+</script>
+</body>
+</html>

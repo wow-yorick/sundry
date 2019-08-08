@@ -1,0 +1,85 @@
+<script type="text/javascript">
+(function(){
+	Object.defineProperty(Object.prototype,"objectId",{
+		get:idGetter,
+		enumberable:false,
+		configurable:false
+	});
+
+	function idGetter() {
+		if(! (idprop in this)) {
+			if(!Object.isExtensible(this))
+				throw Error("Cant't define id for nonextensible objects");
+			Object.defineProperty(this,idprop,{
+				value:nextid++,
+				writable:false,
+				enumberable:false,
+				configurable:false
+			});
+		}
+		return this[idprop];
+	};
+
+	var idprop = "|**objectId**|";
+	var nextid = 1;
+}())
+
+
+//创建一个不可变的类 属性和方法都是只读
+function Range(from, to) {
+	var props = {
+		from:{value:from,enumberable:true,writable:false,configurable:false},
+		to:{value:to,enumberable:true,writable:false,configurable:false}
+	};
+
+	if(this instanceof Range) {
+		Object.defineProperty(this,props);
+	}else{
+		return Object.create(Range.prototype,props);
+	}
+}
+
+Object.defineProperty(Range.prototype,{
+	includes: {
+		value:function(x) {return this.from <= x && x >=this.to;}
+	},
+	foreach: {
+		value: function(f) {
+			for (var x = Math.ceil(this.from); x <= this.to; x++) f(x);
+		}
+	},
+	toString: {
+		value: function() {
+			return "("+this.from+"..."+this.to+")";
+		}
+	}
+})
+
+
+
+//属性描述符工具函数
+function freezeProps(o) {
+	var props = (arguments.length == 1)
+		? Object.getOwnPropertyName(o)
+		: Array.prototype.splic.call(arguments,1);
+	props.forEach(function(n){
+		if(!Object.getOwnPropertyDescriptor(o,n).configurable) return;
+		Object.defineProperty(o,n,{writable:false,configurable:false});
+	});
+	return o;
+
+}
+
+function hideProps(o) {
+	var props = (arguments.length == 1)
+		? Object.getOwnPropertyName(o)
+		: Array.prototype.splic.call(arguments,1);
+	props.forEach(function(n){
+		if(!Object.getOwnPropertyDescriptor(o,n).configurable) return;
+		Object.defineProperty(o,n,{enumberable:false});
+	});
+	return o;
+
+}
+
+</script>

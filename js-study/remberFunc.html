@@ -1,0 +1,34 @@
+<script type="text/javascript">
+//记忆函数
+function memorize(f){
+	var cache = {};
+	return function(){
+		var key = arguments.length + Array.prototype.join.call(arguments,',');
+		console.log(cache)
+		if(key in cache) return cache[key];
+		else return cache[key] = f.apply(this,arguments);
+	}
+}
+
+
+//欧几里德算法
+function gcb(a,b){
+	var t;
+	if(a < b) t=b,b=a,a = t;
+	while( b != 0) t=b,b = a%b,a = t;
+	return a;
+}
+
+var gcbmemo = memorize(gcb);
+var r =gcbmemo(85,187);
+console.log('gchmemo:', r);
+
+
+//利用记忆技巧实现递归
+var factorial = memorize(function (n){
+	return (n <=1)?1:n*factorial(n-1);
+})
+
+var e  = factorial(5);
+console.log('e:', e);
+</script>

@@ -1,0 +1,131 @@
+C-x C-c: 退出
+C-h t：教程
+C-v：下一页
+M-v/ESC-v：上一页
+C-l：将当前行置于屏幕中央
+C-p：上一行，previouse
+C-n：下一行，next
+C-b：左移，backward
+C-f：右移，forward
+
+M-p/n/b/f：移动一个单词/句子／段落
+C-a/e：行首／行尾
+M-a/e：行首或上／下一行的行首／尾
+
+M->/<：文章开始／结束
+
+C-u 8 C-f：C-u重复命令
+
+
+C-g：取消未执行的命令
+
+C-x 1：关闭其它窗口，只留窗口1
+C-x 2：分屏
+C-x o：不同屏幕间跳转
+C-M-v：向下移动下面的屏幕
+C-M-S-v：向上移动上面的屏幕
+
+C-d：删除光标后的一个字符
+M-d：删除光标后的一个词
+C-k：删除从光标到行尾
+M-k：删除从光标到句尾
+
+C-Space/@：标记
+C-w：删除到标记之间的文字
+
+C-y：撤销移除的文字
+M-y：循环撤销移除
+
+C-x u：撤销
+
+C-x C-f：查找文件／打开文件
+C-x C-s：保存文件
+C-x C-b：显示缓冲区的文件
+C-x b：快速切换缓冲区
+C-x s：保存多个缓冲区
+C-x f 设置行边界
+
+M-x repl s[TAB]<return>old-string<return>new-string<return>
+M-x recover file<return>
+M-x text mode<return>
+
+C-s：向前搜索
+C-r：向后搜索
+
+C-h c C-p：简单帮助
+C-h k C-p：详细帮助文档
+C-h f：搜索函数名
+
+
+
+C-v 向前移动一屏
+M-v 向后移动一屏
+C-l 重绘屏幕
+
+C-p 上一行
+C-n 下一行
+C-b 左移
+C-f 右移
+M-f 右移 词
+M-b 左移 词
+
+C-a 行头
+C-e 行尾
+M-a 句首
+M-e 句尾
+
+C-u + 数字 + 命令
+C-u C-v将本行带到屏幕的最上方
+
+C-g 终止命令
+
+C-h k C-f 查看C-f的帮助
+
+删除命令
+C-d 删除光标后1个字符
+M-d 删光标后1个词
+
+C-k 移除光标到"行尾"间的字符
+M-k 移除从光标到"句尾"间的字符
+
+
+C-@选择块   C-w移除(kill)
+C-y 召回
+M-y  召回历史
+
+C-x u 撤销(UNDO)  或  C-_ （数字参数表示的是次数）
+
+C-x C-f 寻找一个文件
+C-x C-s 存储这个文件
+C-x s 保存多个缓冲区
+
+C-x b 换缓冲区
+C-x C-b 列出缓冲区
+C-x 1 一个窗格
+C-x o  other窗格
+
+C-z 暂时离开
+
+注释:
+META 系列通常是语言定义的单位（词 句子 段）
+CONTROL 通常与语言无关的基本单位(字符 行)
+C-x 多与 窗格 文件 缓冲区等东西相关
+C-h m 查看当前主模式的文档
+M 键为修饰键
+ESC ESC ESC 离开
+
+M-x recover-file 恢复文件
+M-q 手动折行
+
+搜索
+C-s 向前搜索
+C-r 向后搜索
+M-% 交互式替换
+
+C-M-v 向前滚屏下部窗格
+C-M-S-v 向后滚屏下部窗格
+
+
+To cut the text, press C-w .
+To copy the text, press M-w .
+To paste the text, press C-y .

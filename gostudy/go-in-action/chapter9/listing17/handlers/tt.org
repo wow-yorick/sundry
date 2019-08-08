@@ -1,0 +1,21 @@
+#+TITLE: XX
+#+AUTHOR: yorick
+#+DATE: 0:00:00 
+#+BEGIN_QUOTE
+
+#+END_QUOTE
+
+#+BEGIN_EXAMPLE
+
+#+END_EXAMPLE
+
+#+BEGIN_SRC go
+import "fmt"
+func main() {
+fmt.Println("xx:", 2+2)
+}
+#+END_SRC
+
+#+RESULTS:
+: xx: 4
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>表单验证</title>
+        <!-- 新 Bootstrap 核心 CSS 文件 --> 
+        <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-10">
+                <form id="demoForm" class="form-horizontal" action="www.abc.com" method="post">
+                    <p>
+                        <input type="text" name="testdemo" datatype="*" errormsg="错误信息" value="" placeholder="测试demo">
+                    </p>
+                    <p>
+					<select name="testdemo" datatype="notfirst" errormsg="请选择">
+                        <option value="0">--请选择--</option>
+						<option>A</option>
+						<option>B</option>
+                    </select>
+                    </p>
+                    <p>
+                    <input type="number" name="testdemo" value="" datatype="n" errormsg="请输入xx(只能为数字)" placeholder="请输入xxx">
+                    </p>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="formActionBtn" type="button" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+<script language="javascript">
+var Verification = function(formSelector,formActionBtnSelector, callback) {
+    var formObj = $(formSelector);
+    formActionBtnSelector = formActionBtnSelector || '#formActionBtn';
+    var formActionBtnObj = $(formActionBtnSelector);
+    var dataType = {
+        "match":/^(.+?)(\d+)-(\d+)$/,
+        "*":/[\w\W]+/,
+        "*6-16":/^[\w\W]{6,16}$/,
+        "n":/^\d+$/,
+        "n6-16":/^\d{6,16}$/,
+        "s":/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
+        "s6-18":/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{6,18}$/,
+        "p":/^[0-9]{6}$/,
+        "m":/^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}$|17[0-9]{9}$|18[0-9]{9}$/,
+        "e":/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
+        "url":/^(\w+:\/\/)?\w+(\.\w+)+.*$/,
+        "on" : function(eleVal, ele, errormsg) {
+            if('on' == ele.attr('class')) {
+                return true;
+            }
+            alert(errormsg);
+            return false;
+        },
+        "notfirst" : function(eleVal, ele, errormsg) {
+            if(0 == eleVal) {
+                //alert(errormsg);
+                alertTips(ele,errormsg);
+                return false;
+            }
+            return true;
+        }
+    };
+
+    var callback = callback || function() {
+        var url = formObj.attr('action');
+    }
+
+    var alertTips = function(ele, msg) {
+        var activeBox = ele.parents('p');
+        var msgbox = activeBox.find('em');
+        ele.focus();
+        if(msgbox.length > 0) {
+            msgbox.html(msg).show();
+            return true;
+        }
+        activeBox.prepend('<em>'+msg+'</em>');
+        ele.on('change input propertychange',function() {
+            activeBox.find('em').hide();
+            //msgbox.hide();
+        })
+    }
+
+    var verfilyRet = function(formObj) {
+        var isPass = true;
+        formObj.find('[datatype]').each(function() {
+            var ele = $(this);
+            var eleTagName = ele[0].tagName || '';
+            var datatype = ele.attr('datatype');
+            var errormsg = ele.attr('errormsg');
+            var eleVal = '';
+            switch(eleTagName.toUpperCase()) {
+                case 'INPUT' :
+                case 'TEXTAREA' :
+                    eleVal = ele.val();
+                break;
+                case 'SELECT' :
+                    eleVal = ele.find("option:selected").val();
+                break;
+                default :
+                    eleVal = '';
+            }
+            if(!dataType[datatype]) {
+                alert('未知类型!');
+                isPass = false;
+                return false;
+            }
+            if(typeof dataType[datatype] == 'function' ) {
+                isPass = dataType[datatype](eleVal, ele, errormsg);
+                if(!isPass) {
+                    return false;
+                }
+            } else if(!dataType[datatype].test(eleVal)) {
+                //alert(errormsg);
+                alertTips(ele,errormsg);
+                isPass = false;
+                return false;
+            }
+
+        });
+        return isPass;
+    }
+
+    Verification.submitLockFlag = false;
+    formActionBtnObj.click(function() {
+        var validRet = verfilyRet(formObj);
+        if(!validRet) {
+            return false;
+        }
+
+        if(Verification.submitLockFlag) {
+            alert('正在努力为您提交信息!');
+            Verification.submitLockFlag = false;
+            return false;
+        }
+        Verification.submitLockFlag = true;
+
+        $.ajax({
+           type: "get",
+           url: formObj.attr('action'),
+           data: formObj.serialize(),
+           //timeout:5000,
+           dataType: 'jsonp',
+           success: function(data){
+               if(200 == data.code) {
+                   if(data.designer_enter_id) {
+                       window.location.href = "www.baidu.com";
+                   } else {
+                       alert("something!");
+                   }
+               } else {
+                   alert(data.msg);
+               }
+           },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus+" 请重试!");
+            },
+            complete: function(JXR, textStatus){
+                Verification.submitLockFlag = false;
+            }
+
+        });
+
+    });
+};
+
+Verification('#demoForm');
+    </script>
+</html>
