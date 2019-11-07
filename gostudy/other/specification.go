@@ -14,12 +14,6 @@ func specification() {
 	}
 	fmt.Printf("s %v", s)
 
-	var x int
-
-	x, _ := f()
-	x, _ = f()
-	x, y := f()
-	x, y = f()
 }
 
 func f() (x, y int) {

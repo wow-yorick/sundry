@@ -3,6 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="969c73b7-950a-4022-b385-331a633d5741" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dup2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise-web-crawler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-in-action/chapter1/channels/hellochannels.go" beforeDir="false" afterPath="$PROJECT_DIR$/go-in-action/chapter1/channels/hellochannels.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gomodifytags.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iota.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/issue.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/label.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/links.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/links_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lissajous.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mutex-counter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-issues.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-sdudy-test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-sdudy-test_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specification.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct-test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-copy.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-gorouting.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-heap.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-lab.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-server.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-uint32.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_copy.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toposort.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tzuoyi.go" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +149,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

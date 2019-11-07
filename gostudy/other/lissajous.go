@@ -18,7 +18,7 @@ const (
 	blackIndex = 1
 )
 
-func lissajous() {
+func lissajousdo() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	lissajous(os.Stdout)
 }
