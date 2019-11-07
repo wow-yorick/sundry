@@ -1,4 +1,4 @@
-package main
+package other
 
 import (
 	"bufio"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main() {
+func abc() {
 
 	counts := make(map[string]int)
 	files := os.Args[1:]

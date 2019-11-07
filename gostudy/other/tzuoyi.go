@@ -1,8 +1,8 @@
-package main
+package other
 
 import "fmt"
 
-func main() {
+func tzuoyi() {
 
 	var tt int64 = 1 << 23
 	fmt.Printf("%b", tt)

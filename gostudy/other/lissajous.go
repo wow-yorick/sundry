@@ -1,4 +1,4 @@
-package main
+package other
 
 import (
 	"image"
@@ -18,7 +18,7 @@ const (
 	blackIndex = 1
 )
 
-func main() {
+func lissajous() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	lissajous(os.Stdout)
 }

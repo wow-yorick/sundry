@@ -1,8 +1,8 @@
-package main
+package other
 
 import "fmt"
 
-func main() {
+func specification() {
 	s := []int{1, 2, 3}
 	ss := s[1:]
 	ss = append(ss, 4)

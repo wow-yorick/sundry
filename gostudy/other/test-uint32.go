@@ -1,7 +1,7 @@
-package main
+package other
 
 import "fmt"
 
-func main() {
+func tunit() {
 	fmt.Println(^uint16(65535))
 }

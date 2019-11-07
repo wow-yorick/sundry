@@ -1,4 +1,4 @@
-package main
+package other
 
 import (
 	"io/ioutil"
@@ -22,7 +22,7 @@ func echo(wr http.ResponseWriter, r *http.Request) {
 
 }
 
-func main() {
+func tserver() {
 	// http.HandleFunc("/", echo)
 	// err := http.ListenAndServe(":8080", nil)
 	// if err != nil {

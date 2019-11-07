@@ -1,4 +1,4 @@
-package github
+package other
 
 import "time"
 

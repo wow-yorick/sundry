@@ -1,11 +1,11 @@
-package main
+package other
 
 import (
 	"fmt"
 	"unicode/utf8"
 )
 
-func main() {
+func buyao() {
 	// s := []int{1, 2, 3}
 	// fmt.Println(s) //[1 2 3]
 

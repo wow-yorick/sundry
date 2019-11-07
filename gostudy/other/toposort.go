@@ -1,4 +1,4 @@
-package gostudy
+package other
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ var prereqs = map[string][]string{
 	},
 }
 
-func main() {
+func toposort() {
 	for i, course := range topoSort(prereqs) {
 		fmt.Printf("%d:\t%s\n", i+1, course)
 	}

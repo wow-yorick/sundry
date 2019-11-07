@@ -1,8 +1,8 @@
-package main
+package other
 
 import "fmt"
 
-func main() {
+func testcop() {
 	// 	slice1 := []int{1, 2, 3, 4, 5}
 	// 	slice2 := []int{6, 7, 8}
 	// 	// c2 := copy(slice2, slice1)

@@ -1,4 +1,4 @@
-package main
+package other
 
 import (
 	"fmt"
@@ -23,7 +23,7 @@ func (c *SafeCounter) Value(key string) int {
 	return c.v[key]
 }
 
-func main() {
+func mutex_counter() {
 	c := SafeCounter{v: make(map[string]int)}
 	for i := 0; i < 1000; i++ {
 		go c.Inc("somekey")

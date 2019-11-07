@@ -1,8 +1,8 @@
-package main
+package other
 
 import "fmt"
 
-func main() {
+func tlab() {
 	// i := 0
 	// for { //since there are no checks, this is an infinite loop
 	// 	if i >= 3 {

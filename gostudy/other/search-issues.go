@@ -1,4 +1,4 @@
-package gostudy
+package other
 
 import (
 	"encoding/json"

@@ -1,4 +1,4 @@
-package main
+package other
 
 import (
 	"fmt"
@@ -88,7 +88,7 @@ func (f fakeFetcher) Fetch(url string) (string, []string, error) {
 	return "", nil, fmt.Errorf("not found: %s", url)
 }
 
-func main() {
+func crawler() {
 	i.Add(1)
 	Craw1("http://golang.org/", 4, fetcher)
 	i.Wait()

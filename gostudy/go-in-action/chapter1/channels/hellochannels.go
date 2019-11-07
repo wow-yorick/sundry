@@ -14,6 +14,11 @@ func printer(ch chan int) {
 	wg.Done()
 }
 
+type Ab struct {
+	A string
+	B int
+}
+
 func main() {
 	c := make(chan int)
 	go printer(c)

@@ -1,5 +1,5 @@
 // This example demonstrates an integer heap built using the heap interface.
-package main
+package other
 
 import (
 	"container/heap"
@@ -29,7 +29,7 @@ func (h *IntHeap) Pop() interface{} {
 
 // This example inserts several ints into an IntHeap, checks the minimum,
 // and removes them in order of priority.
-func main() {
+func theap() {
 	h := &IntHeap{2, 1, 5}
 	heap.Init(h)
 	heap.Push(h, 3)

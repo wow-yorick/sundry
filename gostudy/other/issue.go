@@ -1,16 +1,16 @@
-package main
+package other
 
 import (
 	"fmt"
 	"net/url"
 )
 
-func main() {
-    u := "http://www.baidu.com"
+func issue() {
+	u := "http://www.baidu.com"
 	urlo, _ := url.Parse(u)
 	//urlo.Path,_ = url.QueryUnescape(urlo.Path)
 	tt := fmt.Sprintf("%s://%s%s?%s", urlo.Scheme, urlo.Host, urlo.Path, urlo.RawQuery)
-	fmt.Printf("url:%s",tt)
+	fmt.Printf("url:%s", tt)
 
 	//object := "php-oss-sdk/tests/129715.csv"
 	//object = url.QueryEscape(object)

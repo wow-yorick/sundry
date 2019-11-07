@@ -1,4 +1,4 @@
-package main
+package other
 
 type Server struct {
 	Name        string `json:"name"`

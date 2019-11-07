@@ -1,10 +1,10 @@
-package main
+package other
 
 import (
 	"fmt"
 )
 
-func main() {
+func labelt() {
 	a := 1
 Loop:
 	for a < 10 {

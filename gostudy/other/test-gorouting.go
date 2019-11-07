@@ -1,7 +1,8 @@
-package main
+package other
 
 import (
 	"fmt"
+
 	"golang.org/x/tour/tree"
 )
 
@@ -32,7 +33,7 @@ func Same(t1, t2 *tree.Tree) bool {
 	return true
 }
 
-func main() {
+func goroutt() {
 	var ch = make(chan int)
 	go Walk(tree.New(2), ch)
 	for v := range ch {

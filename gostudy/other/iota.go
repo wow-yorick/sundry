@@ -1,4 +1,4 @@
-package main
+package other
 
 import "fmt"
 
@@ -24,7 +24,7 @@ const (
 	LstdFlags     = Ldate | Ltime // initial values for the standard logger
 )
 
-func main() {
+func iotas() {
 
 	fmt.Printf("Ldate:%d Ltime: %d Lmicroseconds: %d LstdFlags: %d", Ldate, Ltime, Lmicroseconds, LstdFlags)
 	//a := uint16(1 << 15)
