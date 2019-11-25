@@ -1,4 +1,4 @@
-package main
+package channels
 
 import (
 	"io"
@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func main() {
+func netDial() {
 	conn, err := net.Dial("tcp", "localhost:8000")
 	if err != nil {
 		log.Fatal(err)

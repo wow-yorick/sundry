@@ -1,8 +1,8 @@
-package main
+package channels
 
 import "fmt"
 
-func main() {
+func squares() {
 	naturals := make(chan int)
 	squares := make(chan int)
 

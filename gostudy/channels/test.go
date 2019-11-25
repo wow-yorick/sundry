@@ -1,8 +1,8 @@
-package main
+package channels
 
 import "fmt"
 
-func main() {
+func what() {
 	var x int
 	x = 1
 	ch := make(chan int)

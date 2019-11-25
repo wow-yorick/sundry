@@ -1,4 +1,4 @@
-package main
+package channels
 
 import (
 	"log"
@@ -8,7 +8,7 @@ import (
 )
 
 //一个发送者 多个接收者
-func main() {
+func OneSenderManyReceivers() {
 	rand.Seed(time.Now().UnixNano())
 	log.SetFlags(0)
 	const MaxRandomNumber = 100000

@@ -22,7 +22,9 @@ func Sprint(x interface{}) string {
 	default:
 		return "???"
 	}
+
 }
 
-e, _ := eval.Parse("sqrt(A / pi)")
-Display("e", e)
+func main() {
+	println("abc")
+}

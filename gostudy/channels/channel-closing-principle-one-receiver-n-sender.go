@@ -1,4 +1,4 @@
-package main
+package channels
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func main() {
+func receiver() {
 	rand.Seed(time.Now().UnixNano())
 	log.SetFlags(0)
 

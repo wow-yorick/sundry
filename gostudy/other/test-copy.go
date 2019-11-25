@@ -10,5 +10,9 @@ func testcop() {
 	// 	c1 := copy(slice1, slice2)
 	// 	fmt.Printf("slice1: %v slice2: %v c1:%v \n", slice1, slice2, c1)
 	var s []byte
-	fmt.Println("is eq nil %b", s == nil)
+	if s == nil {
+		fmt.Println("s == nil")
+	} else {
+		fmt.Println("s != nil")
+	}
 }
